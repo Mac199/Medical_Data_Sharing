@@ -1,0 +1,97 @@
+{
+  "contractName": "Mds",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a7230582092ffd8aa54397ba3785ff8678627655524105860951a370bd2f2c6960165f45b0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a7230582092ffd8aa54397ba3785ff8678627655524105860951a370bd2f2c6960165f45b0029",
+  "sourceMap": "76:19:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;76:19:0;;;;;;;",
+  "deployedSourceMap": "76:19:0:-;;;;;",
+  "source": "pragma solidity ^0.4.24;\n\n/**\n * The Mds contract does this and that...\n */\ncontract Mds {\n\t\t\n}\n",
+  "sourcePath": "/home/maclin/Documents/Medical_data_sharing/contracts/MedicalDataShaing.sol",
+  "ast": {
+    "absolutePath": "/home/maclin/Documents/Medical_data_sharing/contracts/MedicalDataShaing.sol",
+    "exportedSymbols": {
+      "Mds": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "The Mds contract does this and that...",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Mds",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "76:19:0"
+      }
+    ],
+    "src": "0:96:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/maclin/Documents/Medical_data_sharing/contracts/MedicalDataShaing.sol",
+    "exportedSymbols": {
+      "Mds": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "The Mds contract does this and that...",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Mds",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "76:19:0"
+      }
+    ],
+    "src": "0:96:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-02-13T16:47:56.130Z"
+}

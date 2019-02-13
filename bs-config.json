@@ -1,0 +1,5 @@
+{
+  "server": {
+    "baseDir": ["./node_modules/sqlite3", "./src", "./build/contracts"]
+  }
+}
