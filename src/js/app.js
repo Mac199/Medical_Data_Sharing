@@ -10,7 +10,7 @@ App = {
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
         App.current_account = account;
-        //$("#current_user").html(App.current_account);
+        
         console.log(account);
       }
     });

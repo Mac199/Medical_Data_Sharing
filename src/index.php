@@ -1,3 +1,6 @@
+<?php 
+include 'dbconnection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.html"><b><span demo-msg="index.title">SELECT ACTOR</span></b></a>
+                <a class="navbar-brand" href="./index.php"><b><span demo-msg="index.title">SELECT ACTOR</span></b></a>
             </div>
             <!--/.nav-collapse -->
         </div>
@@ -38,13 +41,13 @@
     <div class="container" style="margin-top : 80px;">
         <div class="row centered">
             <div class="col-lg-6 col-lg-offset-3">
-                <a class="btn btn-warning btn-lg top-button" href="hospital.html" demo-msg="common.actor.hospital">HEALTH PROVIDER</a>
+                <a class="btn btn-warning btn-lg top-button" href="hospital.php" demo-msg="common.actor.hospital">HEALTH PROVIDER</a>
             </div>
  <!--            <div class="col-lg-6 col-lg-offset-3">
                 <a class="btn btn-warning btn-lg top-button" href="doctor.html" demo-msg="common.actor.doctor"></a>
             </div> -->
             <div class="col-lg-6 col-lg-offset-3">
-                <a class="btn btn-warning btn-lg top-button" href="patient.html" demo-msg="common.actor.patient">PATIENT</a>
+                <a class="btn btn-warning btn-lg top-button" href="patient.php" demo-msg="common.actor.patient">PATIENT</a>
             </div>
             <div class="col-lg-3"></div>
         </div>

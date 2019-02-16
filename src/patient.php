@@ -1,6 +1,8 @@
+<?php 
+include 'dbconnection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -53,7 +55,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
-    <script type="text/javascript" src="js/db.js" type="module"></script>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 
 
@@ -124,6 +125,7 @@
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
+
 
 </body>
 
