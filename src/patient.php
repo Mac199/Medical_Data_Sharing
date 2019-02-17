@@ -76,7 +76,7 @@ include 'dbconnection.php';
             <div class="navbar-collapse collapse" style="height: 1px;">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="./hospital.html" demo-msg="common.actor.hospital">HEALTH PROVIDER</a>
+                        <a href="./hospital.php" demo-msg="common.actor.hospital">HEALTH PROVIDER</a>
                     </li>
                     <li>
                         <a href="./patient.html" demo-msg="common.actor.patient">PATIENT</a>
@@ -92,9 +92,9 @@ include 'dbconnection.php';
             <div demo-msg='patient.form.input-new.description'>
                 Please select a health provider and give access.
             </div>
-            <form id="health-provider" onSubmit='App.give-access(); return false'>
+            <form id="health-provider" onSubmit='App.giveAccess(); return false'>
                 <select name="health-providers">
-                    <option value="bu-hospital"> Binghamton Health Provider</option>
+                    <option value="0x890810c6a38a566214b7Fea2A8eA667e1067bF47"> Binghamton Health Provider</option>
                     <option value="sit-hospital">Stevens Health Provider</option>
                 </select>
                 <div class="form-inline top-space" role="form">

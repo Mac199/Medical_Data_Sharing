@@ -1,5 +1,8 @@
 {
   "server": {
-    "baseDir": ["./node_modules/sqlite3", "./src", "./build/contracts"]
+    "baseDir": ["./src", "./build/contracts"]
+  },
+  "routes": {
+  	"/vendor": "./node_modules"
   }
 }

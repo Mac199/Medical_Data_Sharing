@@ -1,80 +1,75 @@
 App = {
-  web3Provider: null,
-  contracts: {},
+	loading: false,
+	contracts: {},
 
-  init: async function() {
-    
-    App.web3Provider = web3.currentProvider;
-    web3 = new Web3(web3.currentProvider);
 
-    web3.eth.getCoinbase(function(err, account) {
-      if (err === null) {
-        App.current_account = account;
-        
-        console.log(account);
+	load: async () => {
+		await App.loadWeb3()
+		await App.loadContract()
+    await App.loadAccount()
+    await App.render()
+	},
+
+  // https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8
+  loadWeb3: async () => {
+    if (typeof web3 !== 'undefined') {
+      App.web3Provider = web3.currentProvider
+      web3 = new Web3(web3.currentProvider)
+    } else {
+      window.alert("Please connect to Metamask.")
+    }
+    // Modern dapp browsers...
+    if (window.ethereum) {
+      window.web3 = new Web3(ethereum)
+      try {
+        // Request account access if needed
+        await ethereum.enable()
+        // Acccounts now exposed
+        web3.eth.sendTransaction({/* ... */})
+      } catch (error) {
+        // User denied account access...
       }
-    });
-
-    // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
-
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
-        petsRow.append(petTemplate.html());
-      }
-    });
-
-    return await App.initWeb3();
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+      App.web3Provider = web3.currentProvider
+      window.web3 = new Web3(web3.currentProvider)
+      // Acccounts always exposed
+      web3.eth.sendTransaction({/* ... */})
+    }
+    // Non-dapp browsers...
+    else {
+      console.log('Non-Ethereum browser detected. You should consider trying MetaMask!')
+    }
   },
 
-  initWeb3: async function() {
-    /*
-     * Replace me...
-     */
+  loadContract: async () => {
+    // Create a JavaScript version of the smart contract
+    const MedicalDataSharing = await $.getJSON('../../build/contracts/MedicalDataSharing.json');
+    App.contracts.MedicalDataSharing = TruffleContract(MedicalDataSharing);
+    App.contracts.MedicalDataSharing.setProvider(App.web3Provider);
 
-    return App.initContract();
+    // Hydrate the smart contract with values from the blockchain
+    App.mds = await App.contracts.MedicalDataSharing.deployed();
   },
 
-  initContract: function() {
-    /*
-     * Replace me...
-     */
-
-    return App.bindEvents();
+  loadAccount: async () => {
+    App.account = web3.eth.accounts[0]
+    console.log(App.account);
   },
 
-  bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+  render: async () => {
+
   },
 
-  markAdopted: function(adopters, account) {
-    /*
-     * Replace me...
-     */
+  giveAccess: async () => {
+    await App.mds.createAccess($("select[name='health-providers']").val(), true)
+
   },
+}
 
-  handleAdopt: function(event) {
-    event.preventDefault();
-
-    var petId = parseInt($(event.target).data('id'));
-
-    /*
-     * Replace me...
-     */
-  }
-
-};
-
-$(function() {
-  $(window).load(function() {
-    App.init();
-  });
-});
+$(() => {
+	$(window).load(() => {
+		App.load()
+	})
+	})
